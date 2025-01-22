@@ -17,3 +17,16 @@
 
 */
 
+
+
+// Accordions, funktionalitet:
+
+const accOutput = document.querySelectorAll('.accordion');
+
+accOutput.forEach(element => {
+    element.addEventListener('click', (e) => {
+        e.currentTarget.classList.toggle('active')
+
+    })
+
+})
