@@ -57,9 +57,12 @@ accordionContent.forEach((item, index) => {
 
   accordionPanel.innerHTML += `
     <div class="accordion">
-      <div class='content-container'>
-        <p class=num-title>${accordionIndex}</p>
-        <h4 class='acc-title'>${item.title}</>
+     <div class='accordion-icon'>
+      <i class='icon-cheveron-right'></i>
+     </div>
+     <div class='content-container'>
+      <p class=num-title>${accordionIndex}</p>
+      <h4 class='acc-title'>${item.title}</>
       </div>
       <div class="panel">
         <p class='acc-content'>${item.subtitle}</p>

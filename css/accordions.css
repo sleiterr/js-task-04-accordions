@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
 /* Style the buttons that are used to open and close the accordion panel */
 .container {
   width: 700px;
@@ -10,6 +15,7 @@
 }
 
 .accordion {
+  position: relative;
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   /* padding: 18px; */
@@ -17,9 +23,25 @@
   text-align: left;
   border: none;
   outline: none;
-  transition: 0.4s;
+  transition: 0.3s ease;
+  padding: 24px;
 
   margin-bottom: 50px;
+}
+
+.accordion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.accordion.active::before {
+  background: #087f5d;
 }
 
 .content-container {
@@ -49,14 +71,22 @@
   color: #ced4da;
 }
 
+.accordion.active .num-title {
+  color: #087f5d;
+}
+
 .acc-title {
   font-family: "Montserrat", serif;
   font-weight: 500;
   font-size: 24px;
 
   color: #343a40;
-  padding: 24px;
+  /* padding: 24px; */
   margin: 0;
+}
+
+.accordion.active .acc-title {
+  color: #087f5d;
 }
 
 .acc-content {
@@ -69,24 +99,20 @@
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.accordion:hover {
-  transition: 0.3s ease;
-  /* background-color: #ccc; */
-}
-
-.active,
-.accordion:active {
-  border-top: 4px solid #087f5d;
-}
 
 /* Hvis .accordion har .actice class'en, skal den være display block. Hvis ikke - display none */
 .accordion .panel {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  /* display: none; */
 }
 
 .accordion.active .panel {
-  display: block;
+  max-height: 500px;
+  opacity: 1;
+  /* display: block; */
 }
 
 /* Style the accordion panel. Note: hidden by default */
@@ -102,13 +128,19 @@
 
 /* Icons */
 
-.accordion:before {
-  content: "\02795"; /* Unicode character for "plus" sign (+) */
-  font-size: 24px;
-  color: #777;
-  float: right;
+.accordion-icon {
+  position: relative;
 }
 
-.active:before {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+.icon-cheveron-right {
+  position: absolute;
+  right: 0;
+  top: -4px;
+  font-size: 45px;
+  color: #087f5d;
+  transition: transform 250ms ease;
+}
+
+.accordion.active .icon-cheveron-right {
+  transform: rotate(90deg);
 }
