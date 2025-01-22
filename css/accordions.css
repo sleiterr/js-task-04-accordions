@@ -1,65 +1,114 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 * {
-    box-sizing: border-box;
-  }
-  
-  /* Style the buttons that are used to open and close the accordion panel */
-  .accordion {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      transition: 0.4s;
-    }
-    
-    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    .active, .accordion:hover {
-      background-color: #ccc;
-    }
-  
-  
-  /* Hvis .accordion har .actice class'en, skal den være display block. Hvis ikke - display none */
-    .accordion .panel {
-      display: none;
-    }
-  
-    .accordion.active .panel {
-      display: block;
-    }
-    
-  
-  
-    /* Style the accordion panel. Note: hidden by default */
-    .panel {
-      padding: 0 18px;
-      background-color: white;
-      overflow: hidden;
-    }
-  
-    
-    .show {
-      display: none;
-    }
-    
-  
-  
-   
-  
-    
-    /* Icons */
-  
-    .accordion:before {
-      content: '\02795'; /* Unicode character for "plus" sign (+) */
-      font-size: 13px;
-      color: #777;
-      float: right;
-      margin-left: 5px;
-    }
-    
-    .active:before {
-      content: "\2796"; /* Unicode character for "minus" sign (-) */
-    }
+  box-sizing: border-box;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.container {
+  width: 700px;
+  margin: 100px auto;
+}
+
+.accordion {
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  /* padding: 18px; */
+
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+
+  margin-bottom: 50px;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+}
+
+.title {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: 48px;
+
+  color: #343a40;
+  text-align: center;
+
+  margin-top: 50px;
+}
+
+.num-title {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: 24px;
+
+  margin: 0;
+  color: #ced4da;
+}
+
+.acc-title {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: 24px;
+
+  color: #343a40;
+  padding: 24px;
+  margin: 0;
+}
+
+.acc-content {
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: #343a40;
+  line-height: 1.4em;
+
+  padding: 24px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+  transition: 0.3s ease;
+  /* background-color: #ccc; */
+}
+
+.active,
+.accordion:active {
+  border-top: 4px solid #087f5d;
+}
+
+/* Hvis .accordion har .actice class'en, skal den være display block. Hvis ikke - display none */
+.accordion .panel {
+  display: none;
+}
+
+.accordion.active .panel {
+  display: block;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  /* padding: 0 18px; */
+  background-color: white;
+  overflow: hidden;
+}
+
+.show {
+  display: none;
+}
+
+/* Icons */
+
+.accordion:before {
+  content: "\02795"; /* Unicode character for "plus" sign (+) */
+  font-size: 24px;
+  color: #777;
+  float: right;
+}
+
+.active:before {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
