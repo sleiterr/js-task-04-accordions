@@ -23,31 +23,34 @@ const accordionContent = [
   {
     title: "Accordion Title 1",
     subtitle:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque illum quisquam facilis accusamus minus tenetur modi, laboriosam excepturi sunt officia dolores quidem eos dolore aliquid numquam voluptates! Eveniet, doloribus minus?",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor pariatur fugit cumque maxime consequuntur consectetur, quaerat molestias porro maiores deserunt illum dolorum doloremque, quibusdam recusandae nisi asperiores id accusamus nobis.",
     list: [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Repellat hic omnis expedita consectetur esse minus soluta earum,",
+      "velit eius illo quia molestiae atque natus, laudantium numquam",
+      "velit eius illo quia molestiae atque natus, laudantium numquam",
     ],
   },
   {
     title: "Accordion Title 2",
     subtitle:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque illum quisquam facilis accusamus minus tenetur modi, laboriosam excepturi sunt officia dolores quidem eos dolore aliquid numquam voluptates! Eveniet, doloribus minus?",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor pariatur fugit cumque maxime consequuntur consectetur, quaerat molestias porro maiores deserunt illum dolorum doloremque, quibusdam recusandae nisi asperiores id accusamus nobis.",
     list: [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Repellat hic omnis expedita consectetur esse minus soluta earum,",
+      "velit eius illo quia molestiae atque natus, laudantium numquam",
+      "velit eius illo quia molestiae atque natus, laudantium numquam",
     ],
   },
   {
     title: "Accordion Title 3",
     subtitle:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque illum quisquam facilis accusamus minus tenetur modi, laboriosam excepturi sunt officia dolores quidem eos dolore aliquid numquam voluptates! Eveniet, doloribus minus?",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor pariatur fugit cumque maxime consequuntur consectetur, quaerat molestias porro maiores deserunt illum dolorum doloremque, quibusdam recusandae nisi asperiores id accusamus nobis.",
     list: [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "Repellat hic omnis expedita consectetur esse minus soluta earum,",
+      "velit eius illo quia molestiae atque natus, laudantium numquam",
+      "velit eius illo quia molestiae atque natus, laudantium numquam",
     ],
   },
 ];
@@ -66,8 +69,10 @@ accordionContent.forEach((item, index) => {
       </div>
       <div class="panel">
         <p class='acc-content'>${item.subtitle}</p>
-        <ul>
-         ${item.list.map((item) => `<li>${item}</li>`).join("")}
+        <ul class='accordion-list'>
+         ${item.list
+           .map((item) => `<li class='accordion-item'>${item}</li>`)
+           .join("")}
             
         </ul>
       </div>

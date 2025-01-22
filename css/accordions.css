@@ -93,9 +93,26 @@ body {
   font-family: "Montserrat";
   font-size: 16px;
   color: #343a40;
-  line-height: 1.4em;
+  line-height: 1.6em;
 
   padding: 24px;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+
+  font-family: "Montserrat";
+  font-size: 16px;
+  line-height: 1em;
+  color: #868e96;
+  margin-bottom: 24px;
+}
+
+.accordion-item {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -120,6 +137,7 @@ body {
   /* padding: 0 18px; */
   background-color: white;
   overflow: hidden;
+  margin-left: 20px;
 }
 
 .show {
